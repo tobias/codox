@@ -207,4 +207,9 @@ h4.macro {
 
 .src-link a {
     font-size: 9pt;
+
+}
+
+.protocol {
+    margin-left: 3em;
 }
