@@ -114,7 +114,8 @@
        [:div.public {:id (h (var-id var))
                      :class (var-classes var)}
         [:h3 (h (:name var))]
-        (if (:macro var) [:h4.macro "macro"])
+        (when (not= "function" (:type var))
+          [:h4.type (:type var)])
         [:div.usage
          (for [form (var-usage var)]
            [:code (h (pr-str form))])]
