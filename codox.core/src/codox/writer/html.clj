@@ -28,7 +28,7 @@
   (->> (select-keys var [:protocol])
        keys
        (map name)
-       (str/join ",")))
+       (str/join " ")))
 
 (defn- link-to-ns [namespace]
   (link-to (ns-filename namespace) [:span (h (:name namespace))]))
@@ -111,8 +111,8 @@
      [:h2 (h (namespace-title namespace))]
      [:pre.doc (h (:doc namespace))]
      (for [var (:publics namespace)]
-       [:div.public {:id (h (var-id var))
-                     :class (var-classes var)}
+       [:div {:id (h (var-id var))
+              :class (str "public " (var-classes var))}
         [:h3 (h (:name var))]
         (when (not= "function" (:type var))
           [:h4.type (:type var)])
