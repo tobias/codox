@@ -102,6 +102,7 @@
   ([path]
      (->> (io/file path)
           (find-namespaces)
-          (mapcat read-ns)))
+          (mapcat read-ns)
+          (remove :no-doc)))
   ([path & paths]
      (mapcat read-namespaces (cons path paths))))

@@ -213,3 +213,7 @@ h4.type {
 .protocol {
     margin-left: 2em;
 }
+
+.index .protocol {
+    margin-left: 0;
+}
